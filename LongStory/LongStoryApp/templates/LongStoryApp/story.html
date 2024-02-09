@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/styleStory.css' %}">
 </head>
 <body>
+    <button onclick="home()">Home Page</button>
     <div>
     <h1 class="text">Story</h1>
     <br>
@@ -22,5 +23,11 @@
         <p class="text">No content available.</p>
     {% endif %}
     </div>
+    <script>
+        function home(){
+            let url = "{% url 'story' %}";
+            window.location.href(url);
+        }
+    </script>
 </body>
 </html>
