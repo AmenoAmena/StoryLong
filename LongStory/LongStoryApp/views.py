@@ -6,14 +6,14 @@ def index(request):
     return render(request, 'LongStoryApp/index.html')
 
 def story_show(request):
-    story_model = story.objects.first()
+    story_model = story.objects.all()
     return render(request, 'LongStoryApp/story.html',{
         'context':story_model
     })
 
 def contribute(request):
     if request.method == 'POST':
-        content = request.POST.get('story')
+        content = request.POST.get('content')
         story.objects.create(story_shown=story)
         return redirect('story')
 

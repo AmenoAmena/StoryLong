@@ -12,7 +12,12 @@
     <h1 class="text">Story</h1>
     <br>
     {% if context %}
-        <p class="text">{{ context.story_shown | safe}}</p>
+        {% for stor in context %}
+        <ul>
+            <li>{{stor.}}</li>
+        </ul>
+        {% endfor %}
+    
     {% else %}
         <p class="text">No content available.</p>
     {% endif %}
