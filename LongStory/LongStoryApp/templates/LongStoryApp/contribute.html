@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoryLoong Contribute</title>
+    <link rel="stylesheet" href="{% static 'css/styleContribute.css' %}">
+</head>
+<body>
+    <div class="forms">
+        <form method="post" action="{% url 'contribute' %}">
+            {% csrf_token %}
+            <textarea name="story" id="story" cols="75" rows="30" resize="no"></textarea>
+            <br>
+            <button type="submit">Contribute</button>
+        </form>
+    </div>
+
+</body>
+</html>

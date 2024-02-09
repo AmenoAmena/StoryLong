@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long Story</title>
+    <link rel="stylesheet" href="{% static 'css/styleMain.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>StoryLong</h1>
+        <button onclick="contribute()">Contribute to the story</button>
+        <button onclick = "view_story()">See the story</button>
+
+    </div>
+    <script>
+        function view_story (){
+            let url = "{% url 'story' %}";
+            window.location.href = url;
+        }
+        function contribute(){
+            let urlContribute = "{% url 'contribute' %}"
+            window.location.href = urlContribute;
+        }
+    </script>
+</body>
+</html>
