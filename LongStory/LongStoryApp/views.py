@@ -9,12 +9,12 @@ def story_show(request):
     story_model = story.objects.all()
     return render(request, 'LongStoryApp/story.html',{
         'context':story_model
-    })
+    })  
 
 def contribute(request):
     if request.method == 'POST':
-        content = request.POST.get('content')
-        story.objects.create(story_shown=story)
+        user_story= request.POST.get('story')
+        story.objects.create(story_shown=user_story)
         return redirect('story')
 
     return render(request, 'LongStoryApp/contribute.html')
