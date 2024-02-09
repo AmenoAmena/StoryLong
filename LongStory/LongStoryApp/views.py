@@ -16,5 +16,5 @@ def contribute(request):
         user_story= request.POST.get('story')
         story.objects.create(story_shown=user_story)
         return redirect('story')
-
+        
     return render(request, 'LongStoryApp/contribute.html')

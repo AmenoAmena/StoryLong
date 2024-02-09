@@ -13,14 +13,16 @@
             {% csrf_token %}
             <textarea name="story" id="story" cols="75" rows="30" resize="no"></textarea>
             <br>
-            <button type="submit" onclick="reset()">Contribute</button>
+            <button type="submit">Contribute</button>
         </form>
-        <button onclick="reset()">Reset</button>
     </div>
+    <button onclick="reset()">Reset</button>
+
 
     <script>
+        
         function reset(){
-            let form = document.getElementById("story");
+            let form = document.getElementById("story");        
             form.value = "";
         }
     </script>
