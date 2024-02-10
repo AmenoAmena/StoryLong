@@ -4,3 +4,18 @@ body {
 .text {
     text-align: center;
 }
+button {
+    width: 10%;
+    height: 20%;
+    background-color:aliceblue;
+    border-radius: 10px;
+}
+.butt {
+    height: 25%;
+    width: 25%; 
+}
+.butt button {
+    height: 20%;
+    width: 50%;
+
+}

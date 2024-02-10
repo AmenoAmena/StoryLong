@@ -10,9 +10,21 @@ textarea {
     align-items: center;
     text-align: center;
 }
-button {
-    width: 15%;
+.butt button {
+    width: 75%;
     height: 20%;
+    background-color: aliceblue;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.buttonc {
+    width: 30%;
+    height: 30%;
     background-color:aliceblue;
     border-radius: 10px;
+}
+.message {
+    position: absolute;
+    top: 0%;
+    left: 0%;
 }

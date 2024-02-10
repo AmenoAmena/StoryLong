@@ -8,25 +8,50 @@
     <link rel="stylesheet" href="{% static 'css/styleContribute.css' %}">
 </head>
 <body>
+    {% if message %}
+            <p style="text-align: center;">{{ message }}</p>
+    {% endif %}
     <div class="forms">
         <form method="post" action="{% url 'contribute' %}">
             {% csrf_token %}
-            <textarea name="story" id="story" cols="75" rows="30" resize="no"></textarea>
+            <textarea name="story" id="story" cols="75" rows="30" resize="none"></textarea>
             <br>
-            <button type="submit">Contribute</button>
+            <button type="submit" class="buttonc">Contribute</button>
             <br>
             <br>
             <br>
-            <button onclick="reset()">Reset</button>
+            <h2>I will delete any gibberish that you wrote</h2>
+            <h2>Everything is going to translated to english</h2>
         </form>
+            <div class="butt">
+            <button onclick="reset()">Reset</button>
+            <br>
+            <br>
+            <br>
+            <button onclick="view_story()">View story</button>
+            <br>
+            <br>
+            <br>
+            <button onclick="home()">Home page</button>   
+        </div>
     </div>
-
-
+    
+    
     <script>
         
         function reset(){
             let form = document.getElementById("story");        
             form.value = "";
+        }
+        
+        function view_story (){
+            let url = "{% url 'story' %}";
+            window.location.href = url;
+        }
+
+        function home(){
+            let urlc = "{% url 'index' %}";
+            window.location.href = urlc;
         }
     </script>
 </body>

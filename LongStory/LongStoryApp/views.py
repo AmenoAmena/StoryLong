@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import story
+from googletrans import Translator
 
 # Create your views here.
 def index(request):
@@ -14,7 +15,15 @@ def story_show(request):
 def contribute(request):
     if request.method == 'POST':
         user_story= request.POST.get('story')
-        story.objects.create(story_shown=user_story)
-        return redirect('story')
+        if user_story == "":
+            return render(request, 'LongStoryApp/contribute.html',{
+                'message': "Please write anything to contribute"
+            })
+        else:
+            translated_story = translate_text(user_story,target_language=en)
+            story.objects.create(story_shown=translate_story)
+            return redirect('story')
         
     return render(request, 'LongStoryApp/contribute.html')
+
+

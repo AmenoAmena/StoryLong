@@ -18,15 +18,20 @@
             <p>{{stor.story_shown}}</p>
         
         {% endfor %}
-    
+        <button onclick="contribute()">Contribute</button>
     {% else %}
         <p class="text">No content available.</p>
+        <button onclick="contribute()">Contribute</button>  
     {% endif %}
     </div>
     <script>
         function home(){
-            let url = "{% url 'story' %}";
-            window.location.href(url);
+            let urlHome = "{% url 'index' %}";
+            window.location.href = urlHome;
+        }
+        function contribute(){
+            let urlContribute = "{% url 'contribute' %}"
+            window.location.href = urlContribute;
         }
     </script>
 </body>
