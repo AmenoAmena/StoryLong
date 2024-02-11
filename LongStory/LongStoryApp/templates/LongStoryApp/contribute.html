@@ -16,7 +16,7 @@
             {% csrf_token %}
             <textarea name="story" id="story" cols="75" rows="30" resize="none"></textarea>
             <br>
-            <button type="submit" class="buttonc">Contribute</button>
+            <button type="submit" class="buttonc" id="myButton">Contribute</button>
             <br>
             <br>
             <br>
@@ -38,7 +38,11 @@
     
     
     <script>
-        
+        let url = "{% url 'story' %}";
+
+        let myButton = document.getElementById("myButton");
+        let clicked = false;
+
         function reset(){
             let form = document.getElementById("story");        
             form.value = "";
@@ -53,6 +57,15 @@
             let urlc = "{% url 'index' %}";
             window.location.href = urlc;
         }
+
+        myButton.addEventListener('click',function () {
+            clicked = true;
+            if (clicked === true){
+                window.location.href = url;
+            }
+        })
+
+
     </script>
 </body>
 </html>
